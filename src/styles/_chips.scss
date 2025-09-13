@@ -1,0 +1,30 @@
+.impact-chip {
+  background-color: $light-bg;
+  color: $primary;
+  padding: 0.3rem 0.5rem 0.2rem;
+  border-radius: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  line-height: 1rem;
+  height: auto;
+  display: inline-flex;
+  font-weight: 500;
+
+  &.impact-chip--alt {
+    padding: 0.4rem 0.6rem 0.2rem;
+    color: $light-bg;
+    background-color: $color-neutral-very-dark-grayish-cyan;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    line-height: 0.9rem;
+    span {
+      height: 0.9rem;
+    }
+  }
+
+  span {
+    height: 1rem;
+  }
+}

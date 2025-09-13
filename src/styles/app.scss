@@ -1,0 +1,36 @@
+@import "./_variables.scss";
+@import "./_layout.scss";
+@import "./_typography.scss";
+@import "./_chips.scss";
+
+/* GLOBAL STYLES */
+
+body {
+  font-family: "League Spartan", "Gill Sans", "Gill Sans MT", Calibri,
+    "Trebuchet MS", sans-serif;
+  font-size: 15px;
+  color: $dark;
+  background-color: $light-bg;
+}
+
+.theme-default {
+  --primary: #{$primary};
+  --white: #fff;
+  --light-bg: #{$light-bg};
+  --light-tabs: #{$light-tabs};
+  --dark: #{$dark};
+  --darker: #{$darker};
+  --focus: #{$focus};
+
+  font-size: 1.1rem;
+}
+
+button {
+  outline: transparent;
+  border: transparent;
+  background: none;
+}
+
+*:focus {
+  outline: 2px solid var(--focus);
+}

@@ -1,0 +1,8 @@
+$grid-breakpoints: (
+  xs: $breakpoint-mobile,
+  sm: 540px,
+  md: 768px,
+  lg: 992px,
+  xl: $breakpoint-desktop,
+  xxl: $breakpoint-desktop,
+);
