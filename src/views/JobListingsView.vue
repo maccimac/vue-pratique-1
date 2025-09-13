@@ -5,10 +5,10 @@
   >
     <div class="header-spacer"></div>
     <div class="content mx-1 mx-lg-4">
-      <div class="filter-bar-holder container" v-if="JobTags.length">
-        <div class="row mb-5 mb-sm-4" v-if="JobTags.length">
+      <div v-if="JobTags.length" class="filter-bar-holder container">
+        <div v-if="JobTags.length" class="row mb-5 mb-sm-4">
           <div class="col">
-            <JobListingFilterBar class="mx-1 mx-lg-4" v-model="JobTags" />
+            <JobListingFilterBar v-model="JobTags" class="mx-1 mx-lg-4" />
           </div>
         </div>
       </div>
@@ -50,16 +50,16 @@ interface TabMap {
 }
 
 export default defineComponent({
+  components: {
+    ChipTag,
+    JobListingCard,
+    JobListingFilterBar,
+  },
   data(): { jobs: JobListing[]; JobTags: JobTag[] } {
     return {
       jobs: [],
       JobTags: [],
     };
-  },
-  components: {
-    ChipTag,
-    JobListingCard,
-    JobListingFilterBar,
   },
   computed: {
     tabsMap(): TabMap {
@@ -125,6 +125,9 @@ export default defineComponent({
       });
     },
   },
+  mounted() {
+    this.jobs = dataJobListings;
+  },
   methods: {
     collectTagProperties(job: JobListing): JobTag[] {
       const tabs: JobTag[] = [];
@@ -160,9 +163,6 @@ export default defineComponent({
       let key = Object.keys(tag)[0] as keyof JobTag;
       return this.JobTags.some((val) => tag[key] == val[key]);
     },
-  },
-  mounted() {
-    this.jobs = dataJobListings;
   },
 });
 </script>

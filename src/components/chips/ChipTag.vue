@@ -9,8 +9,8 @@
   >
     <button
       class="chip-value"
-      @click.stop="isSelected ? null : $emit('click')"
       :tabindex="isSelected || isRemoveable ? -1 : 0"
+      @click.stop="isSelected ? null : $emit('click')"
     >
       <slot v-if="$slots.default" />
       <span v-else-if="tag">
@@ -18,11 +18,11 @@
       </span>
     </button>
     <button
-      class="btn--remove"
       v-if="isRemoveable"
-      @click="$emit('remove', tag)"
+      class="btn--remove"
       :aria-label="`remove ${tag}`"
       tabindex="0"
+      @click="$emit('remove', tag)"
     >
       &nbsp;
     </button>
