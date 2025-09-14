@@ -81,8 +81,18 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-@import "@/styles/_variables.scss";
-@import "@/styles/_layout.scss";
+
+$breakpoint-mobile: 375px;
+$breakpoint-desktop: 1440px;
+
+$grid-breakpoints: (
+    xs: $breakpoint-mobile,
+    sm: 540px,
+    md: 768px,
+    lg: 992px,
+    xl: $breakpoint-desktop,
+    xxl: $breakpoint-desktop,
+);
 
 .impact-job-listing-card {
   max-width: $breakpoint-desktop;
