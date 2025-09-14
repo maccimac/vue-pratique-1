@@ -1,6 +1,7 @@
 import JobListingCard from "./JobListingCard.vue";
-import { mockJob1 } from "./../../tests/mocks";
+import { mockJob1, mockJob2 } from "./../../tests/mocks";
 import type { Meta, StoryFn } from "@storybook/vue3";
+import { JobListing } from "@/types/index";
 
 export default {
   title: "JobListingCard",
@@ -26,15 +27,31 @@ export const VueComponentJSX = () => ({
 });
 
 VueComponentJSX.story = {
-  name: "Simple Job Listing Card",
+  name: "Job Listing Simple",
 };
 
-export const Simple = () => ({
-  render() {
-    return "Hello";
-  },
+interface StoryArgs {
+    job: JobListing,
+    slotText: string
+}
+
+export const VueComponentKnobs = (args: StoryArgs) => ({
+    components: { JobListingCard },
+    setup() {
+        return { args };
+    },
+
+    template: `<JobListingCard
+        :job="args.job"
+    >
+      {{ args.slotText}}
+    </JobListingCard>`,
 });
 
-// Simple.story = {
-//     name: "Simple"
-// }
+VueComponentKnobs.story = {
+    name: "Job Listing With Control",
+};
+VueComponentKnobs.args = {
+    job: mockJob2,
+    slotText: "This is the default slot"
+}
