@@ -1,8 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import '../../src/styles/app.scss';
-// import "./storybook.scss"
-// import { addParameters, addDecorator } from "@storybook/vue3";
+
 
 export const decorators = [
     (story) => {
@@ -13,7 +12,6 @@ export const decorators = [
         };
     },
 ];
-
 
 export const parameters = {
     options: {

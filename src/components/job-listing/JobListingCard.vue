@@ -81,17 +81,16 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-
 $breakpoint-mobile: 375px;
 $breakpoint-desktop: 1440px;
 
 $grid-breakpoints: (
-    xs: $breakpoint-mobile,
-    sm: 540px,
-    md: 768px,
-    lg: 992px,
-    xl: $breakpoint-desktop,
-    xxl: $breakpoint-desktop,
+  xs: $breakpoint-mobile,
+  sm: 540px,
+  md: 768px,
+  lg: 992px,
+  xl: $breakpoint-desktop,
+  xxl: $breakpoint-desktop,
 );
 
 .impact-job-listing-card {
@@ -103,8 +102,9 @@ $grid-breakpoints: (
   margin-bottom: 2rem;
   transition: box-shadow 0.2s ease-in-out;
   box-shadow: 0 0 2rem 0 hsla(180, 8%, 52%, 0.1);
+
   &::before {
-    content: "_";
+    content: "";
     top: 0;
     left: 0;
     width: 0.35rem;
@@ -117,24 +117,30 @@ $grid-breakpoints: (
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
   }
+
   &:hover {
     box-shadow: 0 0 3.5rem 0 hsla(180, 24%, 15%, 0.1);
+
     &::before {
       opacity: 1;
     }
+
     .title {
       color: var(--primary);
     }
   }
+
   &.impact-job-listing-card--featured {
     &::before {
       opacity: 1;
     }
   }
 }
+
 .card-content {
   margin: 1.5rem;
 }
+
 .card-content--left {
   padding-left: 0.25rem;
 }
@@ -143,12 +149,14 @@ $grid-breakpoints: (
   display: flex;
   align-items: center;
 }
+
 .logo img {
   width: 6rem;
   height: 6rem;
   border-radius: 50%;
   margin-right: 1rem;
 }
+
 .impact-chip.impact-chip--new {
   background-color: var(--primary);
 }
